@@ -1,10 +1,5 @@
 <project name="AntProject" default="compile" basedir=".">
-    <description>
-        Description of your project
-    </description>
- 
- 
- 
+
 <property name="projectName" value="antproject" />  
  
 <!--Staging Directory --> 
@@ -26,9 +21,7 @@
     <mkdir dir="${build.dir}" />
 </target>
  
-<target name="clean" description="Flush staging directory">
-    <delete dir="${staging.dir}" />   
-</target>
+
  
  
 <target name="dist" depends="compile" description="package, output to JAR">
