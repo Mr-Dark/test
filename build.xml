@@ -1,4 +1,4 @@
-<project name="AntProject" default="main" basedir=".">
+<project name="AntProject" default="compile" basedir=".">
     <description>
         Description of your project
     </description>
