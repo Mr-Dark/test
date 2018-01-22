@@ -1,38 +1,13 @@
-<project name="AntProject" default="compile" basedir=".">
-
-<property name="projectName" value="antproject" />  
- 
-<!--Staging Directory --> 
-<property name="staging.dir" location="staging" />
- 
-<!-- Java sources -->
-<property name="src.dir" location="src" />
- 
-<!-- Java classes -->
-<property name="build.dir" location="${staging.dir}/bin" />
- 
-<!-- Output, Jar -->
-<property name="dist.dir" location="${staging.dir}/dist" />
- 
-<target name="main" depends="clean, compile, dist" />
- 
-<target name="init">
-    <mkdir dir="${staging.dir}" />
-    <mkdir dir="${build.dir}" />
+<project default="compile">
+<property name="src.java.dir" location="./src/najah/edu"/>
+<property
+          name="result.dir" location="./target"
+/>
+<property
+                                              name="result.javaclasses.dir" location="${result.dir}/classes"/>
+<target name="compile">
+<mkdir dir="${result.javaclasses.dir}"/>
+<javac srcdir="${src.java.dir}" destdir="${result.javaclasses.dir}" debug="true" includeantruntime="false">
+</javac>
 </target>
- 
-
- 
- 
-<target name="dist" depends="compile" description="package, output to JAR">
- 
-    <mkdir dir="${dist.dir}" />
- 
-    <jar jarfile="${dist.dir}/${projectName}.jar" basedir="${build.dir}" >
-        <manifest>
-            <attribute name="Main-Class" value="${projectName}/AntProject" />
-        </manifest>
-    </jar>
-</target>
- 
 </project>
